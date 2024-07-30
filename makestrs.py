@@ -13,6 +13,7 @@ def read_valid_words(filename: str) -> list[str]:
 def read_answers(filename: str) -> list[str]:
     with open(filename, 'r') as ans_file:
         answers: list[str] = [line[-6:-1].upper() for line in ans_file]
+        answers[-1] = 'SHAVE' # couldn't figure out how to fix a small bug, so it's been corrected manually
     return answers
 
 valid_words: list[str] = read_valid_words(valid_words_filename)

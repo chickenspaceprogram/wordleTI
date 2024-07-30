@@ -5,6 +5,10 @@ v0.1 (alpha)
 
 wordleTI is currently still in development, and is incomplete.
 
+Notes:
+
+Dec 32/33 2022 were manually removed from the list of words for each day, as these are not valid days, aren't 5 characters long, and would break this program. 
+
 How valid words are broken up:
 
 a-d (1-4) : Str1
@@ -16,6 +20,8 @@ l-p : (12-16) : Str3
 q-s : (17-19) : Str4
 
 t-z : (20-26) : Str5
+
+answers: Str6
 
 What things do:
 
