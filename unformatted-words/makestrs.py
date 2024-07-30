@@ -1,7 +1,7 @@
-valid_words_filename: str = 'validwords.txt'
-valid_words_parsed_filename: str = 'validwords-parsed.txt'
-answers_filename: str = 'answers.txt'
-answers_parsed_filename: str = 'answers-parsed.txt'
+valid_words_input: str = 'validwords.txt'
+valid_words_output: str = 'validwords-formatted.txt'
+answers_input: str = 'answers.txt'
+answers_output: str = 'answers-formatted.txt'
 
 # apologies for the pretty horrific code here, this only has to run once and then never again.
 
@@ -16,7 +16,7 @@ def read_answers(filename: str) -> list[str]:
         answers[-1] = 'SHAVE' # couldn't figure out how to fix a small bug, so it's been corrected manually
     return answers
 
-valid_words: list[str] = read_valid_words(valid_words_filename)
+valid_words: list[str] = read_valid_words(valid_words_input)
 cutoff_letters: list[str] = ['E', 'L', 'Q', 'T', 'garbage']
 last_index: int = 0
 valid_words_split: list[str] = []
@@ -30,9 +30,9 @@ for index, word in enumerate(valid_words):
 
 valid_words_split.append(''.join(valid_words[last_index:]))
 
-with open(valid_words_parsed_filename, "w") as vwp_file:
+with open(valid_words_output, "w") as vwout_file:
     for string in valid_words_split:
-        vwp_file.write(string + '\n')
+        vwout_file.write(string + '\n')
 
-with open(answers_parsed_filename, "w") as ansp_file:
-    ansp_file.write(''.join(read_answers(answers_filename)))
+with open(answers_output, "w") as ansout_file:
+    ansout_file.write(''.join(read_answers(answers_input)))
