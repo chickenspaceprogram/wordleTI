@@ -5,6 +5,18 @@ v0.1 (alpha)
 
 wordleTI is currently still in development, and is incomplete.
 
+How valid words are broken up:
+
+a-d (1-4) : Str1
+
+e-k (5-11) : Str2
+
+l-p : (12-16) : Str3
+
+q-s : (17-19) : Str4
+
+t-z : (20-26) : Str5
+
 What things do:
 
 readme.md    - You are here
