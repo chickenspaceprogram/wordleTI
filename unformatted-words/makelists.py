@@ -21,7 +21,7 @@ def convert_str(string: str):
 
 alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 letter_to_num: dict = dict()
-for index, letter in enumerate(alphabet, start=1):
+for index, letter in enumerate(alphabet):
     letter_to_num[letter] = index
 
 valid_words: list = read_valid_words('validwords.txt')
