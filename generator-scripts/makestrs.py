@@ -34,5 +34,10 @@ with open(valid_words_output, "w") as vwout_file:
     for string in valid_words_split:
         vwout_file.write(string + '\n')
 
+answers: list = read_answers(answers_input)
+answers_str6: list = answers[:1000]
+answers_str7: list = answers[1000:]
+
 with open(answers_output, "w") as ansout_file:
-    ansout_file.write(''.join(read_answers(answers_input)))
+    ansout_file.write(''.join(answers_str6) + '\n')
+    ansout_file.write(''.join(answers_str7))
