@@ -3,46 +3,50 @@ A port of Wordle to TI-BASIC
 
 v0.1 (alpha)
 
-wordleTI is currently still in development, and is incomplete.
+wordleTI is currently still in development, and is incomplete. If you encounter errors or problems, please post an issue on GitHub so they can be fixed!
 
-
-
-Notes:
-
-Dec 32/33 2022 were manually removed from the list of words for each day, as these are not valid days, aren't 5 characters long, and would break this program. 
-
-How words are broken up:
-a-d (1-4) : Str1
-e-k (5-11) : Str2
-l-p : (12-16) : Str3
-q-s : (17-19) : Str4
-t-z : (20-26) : Str5
-answers: Str6
-
+This readme last updated on 3 Aug 2024.
 
 Included files:
 
 wordleTI/
 |- readme.txt
 |- calc-files/
-|  |- GETINPUT.8xp
-|  |- GETWORD.8xp
 |  |- Str1.8xs
 |  |- Str2.8xs
 |  |- Str3.8xs
 |  |- Str4.8xs
 |  |- Str5.8xs
 |  |- Str6.8xs
-|- formatted-words/
+|  |- Str7.8xs
+|  |- WORDLE.8xg
+|- generator-scripts/
 |  |- answers-formatted.txt
-|  |- validwords-formatted.txt
-|- unformatted-words/
 |  |- answers.txt
 |  |- makestrs.py
-|  |- testing.py
+|  |- validwords-formatted.txt
 |  |- validwords.txt
 
+HOW TO USE:
 
+First, send all the files in the folder calc-files/ to archive memory on your calculator, and ungroup WORDLE.8xg using the menu at [2nd][+][8]. 
+
+Then, run prgmWORDLE! Enter letters using the normal buttons (you don't need to press [Alpha]), and use the [Del] key to delete letters. Once you have typed in your word, press [Enter].
+
+If the word you entered is deleted, that means that it was not recognized as a valid word, so enter something else and try again.
+
+A ^ under a letter means that that letter is both correct and in the right location, while a - under a letter means that the letter is somewhere in the word but is in an incorrect location.
+
+For example:
+
+M A T H S
+  ^ -   ^
+
+This would mean that the A and S are in the correct spot, and the T is somewhere in the word, but not in that spot.
+
+KNOWN BUGS/ISSUES:
+
+This project will break on Jun 28 2027 due to an issue with how SourceCoder 3 handles characters; specifically due to SourceCoder misinterprets the characters "PV" as a single "PV" token. I am working on a fix for this.
 
 Acknowledgements:
 
